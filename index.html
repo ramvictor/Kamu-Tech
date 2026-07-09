@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAMU TECH | Full-Stack Application Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="logo">&lt;KAMU TECH /&gt;</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li> <!-- Links to the new portfolio images section -->
+                <li><a href="#stats">Metrics</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle" class="btn-toggle">🌓 Mode</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <span class="welcome-tag"><?php echo $greeting; ?>, welcome to my space.</span>
+            <h1>Architecting Seamless <span class="highlight">Digital Solutions</span></h1>
+            <p>I design, build, and deploy high-performance software, custom applications, and robust system infrastructures.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn primary-btn">Hire Me</a>
+                <a href="#services" class="btn secondary-btn">View Services</a>
+            </div>
+        </div>
+        
+        <!-- ADDED: Hero Profile Image Container -->
+        <div class="hero-image-container">
+            <img src="GRC.jpg" alt="Developer Profile" class="hero-img">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <h2 class="section-title">What I Build</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🖥️ Web Ecosystems</h3>
+                <p>Developing scalable web platforms, custom content engines, and secure e-commerce portals.</p>
+            </div>
+            <div class="service-card">
+                <h3>📱 Mobile Applications</h3>
+                <p>Native-feeling cross-platform mobile apps structured for optimal memory management.</p>
+            </div>
+            <div class="service-card">
+                <h3>⚙️ System Integrations</h3>
+                <p>Engineered REST APIs, automated backend microservices, and structural database designs.</p>
+            </div>
+             </div>
+             <h2 class="section-title">Other Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🖥️ Camera installation</h3>
+                <p>professional Camera Solutions, custom camera apps from surveillance to smart photography built for speed and accuracy.</p>
+            </div>
+            <div class="service-card">
+                <h3>📱 Networking Engineering</h3>
+                <p>professional network setup and support, reliable WIFI, LAN and internet solutions for Homes and offices.</p>
+            </div>
+            <div class="service-card">
+                <h3>⚙️ Computer Mentenance</h3>
+                <p>keep your computer running like new, repairs, upgrade and maintenance done right and boost speed.</p>
+            </div>
+             </div>
+    </section>
+
+    <!-- ADDED: New Portfolio Gallery Section with Images -->
+    <section id="portfolio" class="portfolio-section">
+        <h2 class="section-title">Recent Systems Built</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="city joy.png" alt="E-Commerce Dashboard Application" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>Enterprise website</h3>
+                    <p>BOK retail shop website</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="city1.png" alt="shopping system" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>Shopping system</h3>
+                    <p>city joy supermarket shopping system</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="BT11.png" alt="Ticketin system Diagram" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>Ticketing system</h3>
+                    <p>BT online bus ticketing system</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="kam1.png" alt="Kamu Tech" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3> portfolio</h3>
+                    <p>Kamu Tech portfolio</p>
+                </div>
+            </div>
+           <div class="portfolio-item">
+                <img src="hospital.png" alt="Kamu Tech" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3> patients system</h3>
+                    <p>Hospital management system</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="bok2.png" alt="Kamu Tech" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3> Customer magement system</h3>
+                    <p>City Supermarket customer management system</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHP Dynamic Metrics Section -->
+    <section id="stats" class="stats-section">
+        <div class="stat-item">
+            <h3 class="stat-number"><?php echo $projects_completed; ?></h3>
+            <p>Deployments Live</p>
+        </div>
+        <div class="stat-item">
+            <h3 class="stat-number"><?php echo $lines_of_code; ?></h3>
+            <p>Clean Code Executed</p>
+        </div>
+        <div class="stat-item">
+            <h3 class="stat-number"><?php echo $happy_clients; ?></h3>
+            <p>Enterprise Clients</p>
+        </div>
+    </section>
+   
+
+<!-- HTML Form Section Interface Structure -->
+<section id="contact-form-section" class="contact-form-section">
+    <div class="form-wrapper">
+        <h2 class="section-title">Initiate a Project Proposal</h2>
+        <p class="section-subtitle">Fill out the matrix below to log your system requirements directly into my consultation queue.</p>
+
+        <!-- Dynamic Status Notification Banners -->
+        <?php if (!empty($status_type)): ?>
+            <div class="status-banner <?php echo $status_type; ?>">
+                <?php echo $status_message; ?>
+            </div>
+        <?php endif; ?>
+
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#contact-form-section" method="POST" class="developer-contact-form">
+            
+            <div class="form-input-group-row">
+                <div class="input-control">
+                    <label for="contact_name">Full Name / Corporate Entity <span class="required">*</span></label>
+                    <input type="text" id="contact_name" name="contact_name" value="<?php echo isset($client_name) ? $client_name : ''; ?>" placeholder="e.g. John Doe" required>
+                </div>
+                
+                <div class="input-control">
+                    <label for="contact_email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="contact_email" name="contact_email" value="<?php echo isset($client_email) ? $client_email : ''; ?>" placeholder="name@company.com" required>
+                </div>
+            </div>
+
+            <div class="form-input-group-row">
+                <div class="input-control">
+                    <label for="contact_phone">Telephone Number (Optional)</label>
+                    <input type="tel" id="contact_phone" name="contact_phone" value="<?php echo isset($client_phone) ? $client_phone : ''; ?>" placeholder="e.g. +256 700 000 000">
+                </div>
+
+                <div class="input-control">
+                    <label for="project_category">Architecture Requirement</label>
+                    <select id="project_category" name="project_category">
+                        <option value="web_app" <?php echo (isset($project_type) && $project_type == 'web_app') ? 'selected' : ''; ?>>Custom Web Application</option>
+                        <option value="system_integration" <?php echo (isset($project_type) && $project_type == 'system_integration') ? 'selected' : ''; ?>>API / Backend Integration</option>
+                        <option value="mobile_app" <?php echo (isset($project_type) && $project_type == 'mobile_app') ? 'selected' : ''; ?>>Mobile App Development</option>
+                        <option value="consultation" <?php echo (isset($project_type) && $project_type == 'consultation') ? 'selected' : ''; ?>>Technical Architecture Consultation</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-control full-width">
+                <label for="contact_message">Project Specifications / Core Message <span class="required">*</span></label>
+                <textarea id="contact_message" name="contact_message" rows="6" placeholder="Please outline your system goals, budget boundaries, or timeline scope..." required><?php echo isset($message_body) ? $message_body : ''; ?></textarea>
+            </div>
+
+            <button type="submit" name="send_message" class="btn primary-btn submit-form-btn">Transmit Secure Message</button>
+        </form>
+    </div>
+</section>
+
+
+    <h2 class="section-title">Developer Headquarters</h2>
+    <p class="section-subtitle">Official communication nodes and office address endpoints for technical contracting and inquiries.</p>
+
+    
+        <!-- Main Engineering Contact Profile Card -->
+        
+            
+            <!-- 1. Developer Profile Name Header Block -->
+            <div class="profile-header-block">
+                <div class="profile-initials">DC</div>
+                <div class="profile-title-meta">
+                    <!-- Replace with your full legal or professional tech name -->
+                    <h3>Kamu Tech</h3> 
+                    <p>Principal Software Engineer & Solutions Architect</p>
+                </div>
+            </div>
+
+            <!-- 2. Ordered Contact Channels Network List -->
+            <div class="profile-details-list">
+                
+                <!-- Physical Address Node -->
+                <div class="details-item">
+                    <span class="details-icon">📍</span>
+                    <div class="details-text">
+                        <strong>Office Address</strong>
+                        <!-- Replace with your actual physical corporate address or country city location -->
+                        <p>Kireka Kamuli Road, Kampala, Uganda</p>
+                    </div>
+                </div>
+
+                <!-- Voice Communication Node -->
+                <div class="details-item">
+                    <span class="details-icon">📞</span>
+                    <div class="details-text">
+                        <strong>Direct Communication</strong>
+                        <!-- Replace with your real dialable telephone number string -->
+                        <p><a href="tel:+256701845547">+256 701845547</a></p>
+                    </div>
+                </div>
+
+                <!-- Network Email Node -->
+                <div class="details-item">
+                    <span class="details-icon">✉️</span>
+                    <div class="details-text">
+                        <strong>Secure Email Endpoint</strong>
+                        <!-- Replace with your project or business domain email address -->
+                        <p><a href="mailto:ramvictorak@gmail.com">ramvictorak@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <!-- Core Operating Availability Block -->
+                <div class="details-item">
+                    <span class="details-icon">🕒</span>
+                    <div class="details-text">
+                        <strong>Engine Core Availability</strong>
+                        <p>Monday - Friday | 24/7</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Enterprise System Application Footer -->
+<footer class="system-global-footer">
+    <div class="footer-matrix">
+        
+        
+        <div class="footer-column brand-summary">
+            <div class="footer-logo">&lt;Kamu Tech /&gt;</div>
+            <p class="brand-bio">Architecting scalable system integrations, automated data pipelines, and responsive software infrastructures with absolute precision.</p>
+        </div>
+
+        <!-- Column 2: Structural Navigation Site Map -->
+        <div class="footer-column site-map">
+            <h4>System Map</h4>
+            <ul class="footer-links-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#service">service</a></li>
+                <li><a href="#portfolio">portfolio</a></li>
+                <li><a href="#contacts form">metrics</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Communication & Location Nodes -->
+        <div class="footer-column contact-meta">
+            <h4>Direct Nodes</h4>
+            <ul class="footer-meta-list">
+                <li><span>📍</span> Kampala, Uganda</li>
+                <li><span>✉️</span> <a href="mailto:ramvictorak@gmail.com">ramvictorak@gmail.com</a></li>
+                <li><span>📞</span> <a href="tel:+256700000000">+256 701845547</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Bottom Structural Strip: Legal & Instant Communication Anchors -->
+    <div class="footer-bottom-strip">
+        <div class="legal-copy">
+            <!-- Dynamic PHP Time Anchor -->
+            <p>&copy; <?php echo date('Y'); ?> kamu Tech Ltd. All rights reserved. Managed under clean code architecture guidelines.</p>
+        </div>
+        
+        <!-- Social Channels Communication Strip -->
+        <div class="footer-social-icons">
+            <a href="https://wa.me" target="_blank" class="social-icon whatsapp-icon" title="Instant WhatsApp Business Channel">💬</a>
+            <a href="https://facebook.com" target="_blank" class="social-icon facebook-icon" title="Follow Project Deployments on Facebook">📘</a>
+            <a href="https://x.com" target="_blank" class="social-icon x-icon" title="Read Micro-Architecture Logs on X">🐦</a>
+            <a href="https://instagram.com" target="_blank" class="social-icon instagram-icon" title="View UI System Mockups on Instagram">📸</a>
+        </div>
+    </div>
+</footer>
+
+
+   
+        
+    
